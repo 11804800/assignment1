@@ -2,30 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Task Manager</h1>
-
-        <!-- Add Task Form -->
-        <form id="task-form">
-            <input type="text" id="task-input" placeholder="Add a new task..." required />
-            <button type="submit">Add Task</button>
-        </form>
-        <!-- Filters -->
-        <div class="filters">
-            <button data-filter="all" class="active">All</button>
-            <button data-filter="pending">Pending</button>
-            <button data-filter="completed">Completed</button>
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button id="addTaskBtn">Add Task</button>
         </div>
-
-        <ul id="task-list"></ul>
+        <div class="filters">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" id="sortNewestBtn">Sort by Newest</button>
+        </div>
+        <ul id="taskList"></ul>
     </div>
+
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <div style="display: flex;justify-content:space-between;align-items: center;">
+                <h2>Edit Task</h2>
+                <span class="close">&times;</span>
+            </div>
+            <input type="text" id="editTaskInput">
+            <button id="saveEditTaskBtn">Save</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
